@@ -8,7 +8,6 @@
 
 import Foundation
 
-
 typealias ExecutorReturnValue = (status: Int, standardOutput: TaskPipe, standardError: TaskPipe)
 
 class CommandExecutor {
