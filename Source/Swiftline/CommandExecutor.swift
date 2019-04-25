@@ -38,8 +38,9 @@ class DryTaskExecutor: TaskExecutor {
 class ActualTaskExecutor: TaskExecutor {
   
   func execute(_ commandParts: [String]) -> ExecutorReturnValue  {
+    
     let task = Process()
-
+    
     task.launchPath = "/usr/bin/env"
     task.arguments = commandParts
     
@@ -51,7 +52,9 @@ class ActualTaskExecutor: TaskExecutor {
     task.launch()
     task.waitUntilExit()
     
+    
     return (Int(task.terminationStatus), stdoutPipe, stderrPipe)
+    
   }
 }
 
